@@ -1,0 +1,22 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("宠物模拟器x", "DarkTheme")
+
+local Tab = Window:NewTab("功能")
+
+local Section = Tab:NewSection("交易欺骗测试版")
+
+Section:NewButton("交易欺骗开启", "这里没有文本", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/main/114514"))()
+end)
+
+Section:NewButton("交易欺骗关闭", "这里没有文本", function()
+end)
+
+Section:NewToggle("骗完开启防检测", "ToggleInof", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+    end
+end)
