@@ -1,0 +1,293 @@
+local suskey = "hya"
+
+
+local GUI = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Key = Instance.new("ImageLabel")
+local Text = Instance.new("TextLabel")
+local VerifyFrame = Instance.new("Frame")
+local KeyBox = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local VerifyButton = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
+local GetKey = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local GuiRemoval = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+
+
+
+GUI.Name = "GUI"
+GUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Main.Name = "Main"
+Main.Parent = GUI
+Main.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+Main.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Main.Position = UDim2.new(0.413353175, 0, 0.441176474, 0)
+Main.Size = UDim2.new(0.172441572, 0, 0.117647059, 0)
+
+UICorner.Parent = Main
+
+Key.Name = "Key"
+Key.Parent = Main
+Key.BackgroundTransparency = 1.000
+Key.Position = UDim2.new(0.435148925, 0, 0.115340024, 0)
+Key.Size = UDim2.new(0.128056228, 0, 0.338304013, 0)
+Key.ZIndex = 2
+Key.Image = "rbxassetid://3926307971"
+Key.ImageColor3 = Color3.fromRGB(255, 38, 38)
+Key.ImageRectOffset = Vector2.new(44, 324)
+Key.ImageRectSize = Vector2.new(36, 36)
+
+Text.Name = "Text"
+Text.Parent = Main
+Text.BackgroundColor3 = Color3.fromRGB(26, 26, 2)
+Text.BackgroundTransparency = 1.000
+Text.BorderColor3 = Color3.fromRGB(26, 26, 26)
+Text.Position = UDim2.new(0.0327102803, 0, 0.370000005, 0)
+Text.Size = UDim2.new(0.934579492, 0, 0.5, 0)
+Text.Font = Enum.Font.SourceSansSemibold
+Text.Text = "Key Required"
+Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text.TextSize = 35.000
+Text.TextWrapped = true
+
+VerifyFrame.Name = "Verify Frame"
+VerifyFrame.Parent = GUI
+VerifyFrame.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+VerifyFrame.Position = UDim2.new(0.388749182, 0, 0.569411755, 0)
+VerifyFrame.Size = UDim2.new(0.222401291, 0, 0.15529412, 0)
+
+KeyBox.Name = "Key Box"
+KeyBox.Parent = VerifyFrame
+KeyBox.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+KeyBox.Position = UDim2.new(0.216714069, 0, 0.0933334902, 0)
+KeyBox.Size = UDim2.new(0.552679658, 0, 0.298396379, 0)
+KeyBox.Font = Enum.Font.SourceSansSemibold
+KeyBox.PlaceholderColor3 = Color3.fromRGB(80, 80, 80)
+KeyBox.PlaceholderText = "Key"
+KeyBox.Text = ""
+KeyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeyBox.TextScaled = true
+KeyBox.TextSize = 14.000
+KeyBox.TextWrapped = true
+
+UICorner_2.Parent = KeyBox
+
+VerifyButton.Name = "Verify Button"
+VerifyButton.Parent = VerifyFrame
+VerifyButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+VerifyButton.Position = UDim2.new(0.13767235, 0, 0.491583407, 0)
+VerifyButton.Size = UDim2.new(0.724637687, 0, 0.378787875, 0)
+VerifyButton.Font = Enum.Font.SourceSansSemibold
+VerifyButton.Text = "Verify Key"
+VerifyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+VerifyButton.TextSize = 34.000
+VerifyButton.MouseButton1Down:connect(function()
+	if KeyBox.Text == suskey then
+		local TweenService = game:GetService("TweenService")
+		local key = game.Players.LocalPlayer.PlayerGui.GUI.Main.Key
+		local info = TweenInfo.new(0.6, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false)
+
+		local tween = TweenService:Create(key, info, {ImageColor3 = Color3.fromRGB(106, 255, 106)})
+
+		tween:Play()
+		
+		game.StarterGui:SetCore("SendNotification", {Title = "correct key", Text = "welcome", Icon = "rbxassetid://12206884774", Duration = 5})
+
+		wait(7)
+
+		GUI.Parent = nil
+
+
+		-- sussy script goes here
+	end
+end)
+
+UICorner_3.Parent = VerifyButton
+
+UICorner_4.Parent = VerifyFrame
+
+GetKey.Name = "GetKey"
+GetKey.Parent = VerifyFrame
+GetKey.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+GetKey.Position = UDim2.new(0.235357329, 0, -1.38818645, 0)
+GetKey.Size = UDim2.new(0.505842388, 0, 0.447802067, 0)
+GetKey.Font = Enum.Font.SourceSansSemibold
+GetKey.Text = "Get Key"
+GetKey.TextColor3 = Color3.fromRGB(255, 255, 255)
+GetKey.TextSize = 42.000
+GetKey.TextWrapped = true
+GetKey.MouseButton1Down:connect(function()
+	setclipboard(suskey)
+	
+	game.StarterGui:SetCore("SendNotification", {Title = "key copied", Text = "the key was copied into your clipboard", Icon = "", Duration = 5})
+end)
+
+UICorner_5.Parent = GetKey
+
+GuiRemoval.Name = "Gui Removal"
+GuiRemoval.Parent = VerifyFrame
+GuiRemoval.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+GuiRemoval.Position = UDim2.new(2.59248304, 0, -0.608146846, 0)
+GuiRemoval.Size = UDim2.new(0.126419857, 0, 0.321553528, 0)
+GuiRemoval.Font = Enum.Font.SourceSansSemibold
+GuiRemoval.Text = "X"
+GuiRemoval.TextColor3 = Color3.fromRGB(255, 148, 148)
+GuiRemoval.TextSize = 42.000
+GuiRemoval.TextWrapped = true
+GuiRemoval.MouseButton1Down:connect(function()
+	GUI.Parent = nil
+	
+	game.StarterGui:SetCore("SendNotification", {Title = "i hate you", Text = "i hate you now because you closed the script", Icon = "", Duration = 5})
+end)
+
+UICorner_6.Parent = GuiRemoval
+local MaGiXxWG = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local MaGiXxAutoFarmON = Instance.new("TextButton")
+local MaGiXxAutoFarmOFF = Instance.new("TextButton")
+local MaGiXxOpenMenu = Instance.new("Frame")
+local CloseMainMaGiXx = Instance.new("TextButton")
+local OpenMainMaGiXx = Instance.new("TextButton")
+ 
+--Properties:
+ 
+MaGiXxWG.Name = "MaGiXxWG"
+MaGiXxWG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MaGiXxWG.ResetOnSpawn = false
+ 
+Main.Name = "Main"
+Main.Parent = MaGiXxWG
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.362974942, 0, 0.35117057, 0)
+Main.Size = UDim2.new(0, 257, 0, 103)
+Main.Active = true
+Main.Draggable = true
+Main.Visible = false
+ 
+title.Name = "title"
+title.Parent = Main
+title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+title.Position = UDim2.new(0, 0, -0.000243166665, 0)
+title.Size = UDim2.new(0, 257, 0, 26)
+title.Font = Enum.Font.SciFi
+title.Text = "举重模拟器（龙叔自制脚本）"
+title.TextColor3 = Color3.fromRGB(255, 0, 0)
+title.TextScaled = true
+title.TextSize = 14.000
+title.TextWrapped = true
+ 
+MaGiXxAutoFarmON.Name = "MaGiXxAutoFarmON"
+MaGiXxAutoFarmON.Parent = Main
+MaGiXxAutoFarmON.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MaGiXxAutoFarmON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MaGiXxAutoFarmON.Position = UDim2.new(0.205787927, 0, 0.466480702, 0)
+MaGiXxAutoFarmON.Size = UDim2.new(0, 150, 0, 33)
+MaGiXxAutoFarmON.Font = Enum.Font.SourceSans
+MaGiXxAutoFarmON.Text = "开启成功"
+MaGiXxAutoFarmON.TextColor3 = Color3.fromRGB(0, 255, 0)
+MaGiXxAutoFarmON.TextScaled = true
+MaGiXxAutoFarmON.TextSize = 14.000
+MaGiXxAutoFarmON.TextWrapped = true
+ 
+MaGiXxAutoFarmOFF.Name = "MaGiXxAutoFarmOFF"
+MaGiXxAutoFarmOFF.Parent = Main
+MaGiXxAutoFarmOFF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MaGiXxAutoFarmOFF.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MaGiXxAutoFarmOFF.Position = UDim2.new(0.205787927, 0, 0.466480702, 0)
+MaGiXxAutoFarmOFF.Size = UDim2.new(0, 150, 0, 33)
+MaGiXxAutoFarmOFF.Font = Enum.Font.SourceSans
+MaGiXxAutoFarmOFF.Text = "关闭成功"
+MaGiXxAutoFarmOFF.TextColor3 = Color3.fromRGB(255, 0, 0)
+MaGiXxAutoFarmOFF.TextScaled = true
+MaGiXxAutoFarmOFF.TextSize = 14.000
+MaGiXxAutoFarmOFF.TextWrapped = true
+ 
+MaGiXxOpenMenu.Name = "MaGiXxOpenMenu"
+MaGiXxOpenMenu.Parent = MaGiXxWG
+MaGiXxOpenMenu.BackgroundColor3 = Color3.fromRGB(255, 234, 169)
+MaGiXxOpenMenu.BorderColor3 = Color3.fromRGB(0, 38, 255)
+MaGiXxOpenMenu.Position = UDim2.new(0, 0, 0.924749136, 0)
+MaGiXxOpenMenu.Size = UDim2.new(0, 100, 0, 28)
+ 
+CloseMainMaGiXx.Name = "CloseMainMaGiXx"
+CloseMainMaGiXx.Parent = MaGiXxOpenMenu
+CloseMainMaGiXx.BackgroundColor3 = Color3.fromRGB(255, 234, 169)
+CloseMainMaGiXx.BorderColor3 = Color3.fromRGB(0, 38, 255)
+CloseMainMaGiXx.Size = UDim2.new(0, 100, 0, 28)
+CloseMainMaGiXx.Font = Enum.Font.SciFi
+CloseMainMaGiXx.Text = "关闭"
+CloseMainMaGiXx.TextColor3 = Color3.fromRGB(255, 0, 4)
+CloseMainMaGiXx.TextSize = 14.000
+CloseMainMaGiXx.TextWrapped = true
+ 
+OpenMainMaGiXx.Name = "OpenMainMaGiXx"
+OpenMainMaGiXx.Parent = MaGiXxOpenMenu
+OpenMainMaGiXx.BackgroundColor3 = Color3.fromRGB(255, 234, 169)
+OpenMainMaGiXx.BorderColor3 = Color3.fromRGB(0, 38, 255)
+OpenMainMaGiXx.Size = UDim2.new(0, 100, 0, 28)
+OpenMainMaGiXx.Font = Enum.Font.SciFi
+OpenMainMaGiXx.Text = "打开"
+OpenMainMaGiXx.TextColor3 = Color3.fromRGB(85, 255, 0)
+OpenMainMaGiXx.TextSize = 14.000
+OpenMainMaGiXx.TextWrapped = true
+ 
+--Sripts MaGiXx:
+ 
+OpenMainMaGiXx.MouseButton1Down:connect(function()
+    Main.Visible = true
+    OpenMainMaGiXx.Visible = false
+    CloseMainMaGiXx.Visible = true
+end)
+ 
+CloseMainMaGiXx.MouseButton1Down:connect(function()
+    Main.Visible = false
+    CloseMainMaGiXx.Visible = false
+    OpenMainMaGiXx.Visible = true
+end)
+ 
+MaGiXxAutoFarmON.MouseButton1Down:connect(function()
+_G.Sale = false
+_G.Lift = false
+    MaGiXxAutoFarmON.Visible = false
+    MaGiXxAutoFarmOFF.Visible = true
+end)
+ 
+MaGiXxAutoFarmOFF.MouseButton1Down:connect(function()
+ 
+    MaGiXxAutoFarmON.Visible = true
+    MaGiXxAutoFarmOFF.Visible = false
+ 
+    _G.Sale = true
+ 
+while _G.Sale do
+wait()
+local table_1 = {
+[1] = 'SellMuscle'
+};
+local Target = game:GetService("ReplicatedStorage").RemoteEvent;
+Target:FireServer(table_1);
+    end
+ 
+    _G.Lift = true
+ 
+while _G.Lift do
+wait(0.1)
+local table_1 = {
+[1] = 'GainMuscle'
+};
+local Target = game:GetService("ReplicatedStorage").RemoteEvent;
+Target:FireServer(table_1);
+end
+end)
+ 
+--[[Scripter:MaGiXx Gui:MaGiXx
+          pleas sub           ]]--
