@@ -100,7 +100,7 @@ VerifyButton.MouseButton1Down:connect(function()
 
 		tween:Play()
 		
-		game.StarterGui:SetCore("SendNotification", {Title = "correct key", Text = "welcome", Icon = "rbxassetid://12206884774", Duration = 5})
+		game.StarterGui:SetCore("SendNotification", {Title = "卡密有效", Text = "欢迎使用", Icon = "rbxassetid://12206884774", Duration = 5})
 
 		wait(7)
 
@@ -128,7 +128,7 @@ GetKey.TextWrapped = true
 GetKey.MouseButton1Down:connect(function()
 	setclipboard(suskey)
 	
-	game.StarterGui:SetCore("SendNotification", {Title = "key copied", Text = "the key was copied into your clipboard", Icon = "", Duration = 5})
+	game.StarterGui:SetCore("SendNotification", {Title = "想白嫖？", Text = "滚你妈逼", Icon = "", Duration = 5})
 end)
 
 UICorner_5.Parent = GetKey
@@ -146,7 +146,7 @@ GuiRemoval.TextWrapped = true
 GuiRemoval.MouseButton1Down:connect(function()
 	GUI.Parent = nil
 	
-	game.StarterGui:SetCore("SendNotification", {Title = "i hate you", Text = "i hate you now because you closed the script", Icon = "", Duration = 5})
+	game.StarterGui:SetCore("SendNotification", {Title = "关闭脚本", Text = "关了也没有用你个傻逼", Icon = "", Duration = 5})
 end)
 
 UICorner_6.Parent = GuiRemoval
