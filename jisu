@@ -7,17 +7,17 @@ if game.CoreGui:FindFirstChild("龙叔制作") then
     game.CoreGui:FindFirstChild("龙叔制作"):Destroy()
 end
 
-if game.CoreGui:FindFirstChild("Team Skeet Noti") then
-    game.CoreGui:FindFirstChild("Team Skeet Noti"):Destroy()
+if game.CoreGui:FindFirstChild("龙叔制作 Noti") then
+    game.CoreGui:FindFirstChild("龙叔制作 Noti"):Destroy()
 end
 
 local Solaris = Instance.new("ScreenGui")
-Solaris.Name = 'Team Skeet'
+Solaris.Name = '龙叔制作'
 Solaris.Parent = game.CoreGui
 Solaris.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 local NotificationHolder = Instance.new("ScreenGui")
-NotificationHolder.Name = 'Team Skeet Noti'
+NotificationHolder.Name = '龙叔制作 Noti'
 NotificationHolder.Parent = game.CoreGui
 NotificationHolder.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
