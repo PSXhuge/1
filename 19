@@ -35,7 +35,7 @@ Main.Size = UDim2.new(0.172441572, 0, 0.117647059, 0)
 
 UICorner.Parent = Main
 
-Key.Name = "Key"
+Key.Name = "请输入卡密"
 Key.Parent = Main
 Key.BackgroundTransparency = 1.000
 Key.Position = UDim2.new(0.435148925, 0, 0.115340024, 0)
@@ -87,7 +87,7 @@ VerifyButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 VerifyButton.Position = UDim2.new(0.13767235, 0, 0.491583407, 0)
 VerifyButton.Size = UDim2.new(0.724637687, 0, 0.378787875, 0)
 VerifyButton.Font = Enum.Font.SourceSansSemibold
-VerifyButton.Text = "Verify Key"
+VerifyButton.Text = "登录卡密"
 VerifyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 VerifyButton.TextSize = 34.000
 VerifyButton.MouseButton1Down:connect(function()
@@ -115,7 +115,7 @@ UICorner_3.Parent = VerifyButton
 
 UICorner_4.Parent = VerifyFrame
 
-GetKey.Name = "GetKey"
+GetKey.Name = "获得卡密"
 GetKey.Parent = VerifyFrame
 GetKey.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
 GetKey.Position = UDim2.new(0.235357329, 0, -1.38818645, 0)
