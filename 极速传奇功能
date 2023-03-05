@@ -19,13 +19,13 @@ Main.Position = UDim2.new(0.385036498, 0, 0.133200794, 0)
 Main.Size = UDim2.new(0, 395, 0, 271)
 Main.Draggable = true
 
-AutoXP.Name = "Auto XP"
+AutoXP.Name = "刷经验"
 AutoXP.Parent = Main
 AutoXP.BackgroundColor3 = Color3.new(0, 0, 0)
 AutoXP.Position = UDim2.new(0.225957587, 0, 0.269300699, 0)
 AutoXP.Size = UDim2.new(0, 200, 0, 50)
 AutoXP.Font = Enum.Font.GothamSemibold
-AutoXP.Text = "Auto XP!"
+AutoXP.Text = "刷经验"
 AutoXP.TextColor3 = Color3.new(1, 1, 1)
 AutoXP.TextScaled = true
 AutoXP.TextSize = 24
@@ -52,13 +52,13 @@ local A_1 = "collectOrb" local A_2 = "Gem" local A_3 = "City" local Event = game
 end
 end)
 
-AutoRebirth.Name = "Auto Rebirth"
+AutoRebirth.Name = "自动重生"
 AutoRebirth.Parent = Main
 AutoRebirth.BackgroundColor3 = Color3.new(0, 0, 0)
 AutoRebirth.Position = UDim2.new(0.225957587, 0, 0.586643875, 0)
 AutoRebirth.Size = UDim2.new(0, 200, 0, 50)
 AutoRebirth.Font = Enum.Font.GothamSemibold
-AutoRebirth.Text = "Auto Rebirth"
+AutoRebirth.Text = "自动重生"
 AutoRebirth.TextColor3 = Color3.new(1, 1, 1)
 AutoRebirth.TextScaled = true
 AutoRebirth.TextSize = 24
@@ -76,7 +76,7 @@ Credits.Parent = Main
 Credits.BackgroundColor3 = Color3.new(0, 0, 0)
 Credits.Size = UDim2.new(0, 395, 0, 37)
 Credits.Font = Enum.Font.GothamSemibold
-Credits.Text = "Gui Made By:VesilicsHD"
+Credits.Text = "脚本作者龙叔"
 Credits.TextColor3 = Color3.new(1, 1, 1)
 Credits.TextScaled = true
 Credits.TextSize = 14
@@ -88,7 +88,7 @@ Game.BackgroundColor3 = Color3.new(0, 0, 0)
 Game.Position = UDim2.new(0, 0, 0.863468647, 0)
 Game.Size = UDim2.new(0, 395, 0, 37)
 Game.Font = Enum.Font.GothamSemibold
-Game.Text = "Legends Of Speed Hack Script"
+Game.Text = "极速传奇"
 Game.TextColor3 = Color3.new(1, 1, 1)
 Game.TextScaled = true
 Game.TextSize = 14
