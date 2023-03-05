@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/19"))()
-local Window = OrionLib:MakeWindow({Name = "宠物模拟器x交易欺骗", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "极速传奇卡宠", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
 
@@ -19,15 +19,17 @@ local Section = Tab:AddSection({
 
 
 Tab:AddButton({
-	Name = "交易欺骗开启",
-	Callback = function()		
+	Name = "开启卡宠",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87"))()		
   	end
 })
 
 
 Tab:AddButton({
-	Name = "交易欺骗关闭",
-	Callback = function()        
+	Name = "自动重生和自动刷等级",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87%E5%8A%9F%E8%83%BD"))()        
   	end    
 })
 
@@ -41,6 +43,12 @@ Tab:AddButton({
 		   wait(1)
 		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 		end)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "脚本交流群786515108",
+	Callback = function()	        
   	end    
 })
 
