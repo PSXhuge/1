@@ -3,7 +3,7 @@
 
 
 local suskey = "hya"
-local ljkey ＝ "你妈死了"
+
 
 local GUI = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -35,7 +35,7 @@ Main.Size = UDim2.new(0.172441572, 0, 0.117647059, 0)
 
 UICorner.Parent = Main
 
-Key.Name = "请输入卡密"
+Key.Name = "Key"
 Key.Parent = Main
 Key.BackgroundTransparency = 1.000
 Key.Position = UDim2.new(0.435148925, 0, 0.115340024, 0)
@@ -87,7 +87,7 @@ VerifyButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 VerifyButton.Position = UDim2.new(0.13767235, 0, 0.491583407, 0)
 VerifyButton.Size = UDim2.new(0.724637687, 0, 0.378787875, 0)
 VerifyButton.Font = Enum.Font.SourceSansSemibold
-VerifyButton.Text = "登录卡密"
+VerifyButton.Text = "Verify Key"
 VerifyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 VerifyButton.TextSize = 34.000
 VerifyButton.MouseButton1Down:connect(function()
@@ -107,7 +107,7 @@ VerifyButton.MouseButton1Down:connect(function()
 		GUI.Parent = nil
 
 
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/nmsl.cnm.xxs"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/nmsl.cnm.xxs"))()
 	end
 end)
 
@@ -126,9 +126,9 @@ GetKey.TextColor3 = Color3.fromRGB(255, 255, 255)
 GetKey.TextSize = 42.000
 GetKey.TextWrapped = true
 GetKey.MouseButton1Down:connect(function()
-	setclipboard(ljkey)
+	setclipboard(suskey)
 	
-	game.StarterGui:SetCore("SendNotification", {Title = "想白嫖？", Text = "去你妈逼", Icon = "", Duration = 5})
+	game.StarterGui:SetCore("SendNotification", {Title = "key copied", Text = "the key was copied into your clipboard", Icon = "", Duration = 5})
 end)
 
 UICorner_5.Parent = GetKey
