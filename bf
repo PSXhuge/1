@@ -2089,7 +2089,7 @@ game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
 end)
 --------------------------------------------------------------------
-local RenUi = library:AddWindow("TUPER HUB",Enum.KeyCode.RightControl)
+local RenUi = library:AddWindow("龙叔制作【源码来自外网】",Enum.KeyCode.RightControl)
 --------------------------------------------------------------------
 local Main = RenUi:AddTab("自动农场","6026568198")
 local Combat = RenUi:AddTab("对战","7251993295")
