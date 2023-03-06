@@ -124,6 +124,49 @@ Tab:AddButton({
 })
 
 local Tab = Window:MakeTab({
+	Name = "监狱人生",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "人物透视（杀手谜团2可以用）",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/esp"))()
+  	end
+})
+
+Tab:AddButton({
+	Name = "变车模型",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/bianche"))()
+  	end
+})
+
+Tab:AddButton({
+	Name = "变死神（有惊喜）",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/sb"))()    
+  	end
+})
+
+Tab:AddButton({
+	Name = "变钢铁侠（有惊喜）",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/sb2"))()
+  	end
+})
+
+Tab:AddButton({
+	Name = "无头",
+	Callback = function()
+local A_1 = "{Removing Head, Hold Tight...}" local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+local lp = game:GetService "Players".LocalPlayer if lp.Character:FindFirstChild "Head" then local char = lp.Character char.Archivable = true local new = char:Clone() new.Parent = workspace lp.Character = new wait(2) local oldhum = char:FindFirstChildWhichIsA "Humanoid" local newhum = oldhum:Clone() newhum.Parent = char newhum.RequiresNeck = false oldhum.Parent = nil wait(2) lp.Character = char new:Destroy() wait(1) newhum:GetPropertyChangedSignal("Health"):Connect( function() if newhum.Health <= 0 then oldhum.Parent = lp.Character wait(1) oldhum:Destroy() end end) workspace.CurrentCamera.CameraSubject = char if char:FindFirstChild "Animate" then char.Animate.Disabled = true wait(.1) char.Animate.Disabled = false end lp.Character:FindFirstChild "Head":Destroy() end
+local A_1 = "{Head Removed Successfully. Reset to Return to Normal.}" local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+  	end
+})
+
+local Tab = Window:MakeTab({
 	Name = "公告（必看）",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
