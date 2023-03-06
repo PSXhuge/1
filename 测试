@@ -1,0 +1,71 @@
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/19"))()
+local Window = OrionLib:MakeWindow({Name = "极速传奇卡宠", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+
+
+local Tab = Window:MakeTab({
+	Name = "菜单",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+local Section = Tab:AddSection({
+	Name = "付费功能"
+})
+
+
+
+
+Tab:AddButton({
+	Name = "开启卡宠",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87"))()		
+  	end
+})
+
+
+Tab:AddButton({
+	Name = "自动重生和自动刷等级",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87%E5%8A%9F%E8%83%BD"))()        
+  	end    
+})
+
+Tab:AddButton({
+	Name = "反挂机【防检测】",
+	Callback = function()
+		print("Anti Afk On")
+		local vu = game:GetService("VirtualUser")
+		game:GetService("Players").LocalPlayer.Idled:connect(function()
+		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		   wait(1)
+		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		end)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "刷经验",
+	Callback = function()
+spawn(function()
+    while task.wait() do
+        if StartFarm then
+            pcall(function()
+                for i,v in pairs(game:GetService("ReplicatedStorage").Orbs:GetChildren()) do
+                    if v:IsA("Model") then
+                        for i = 1,FarmSpeed do
+                            game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", v.Name, "City")
+    end    
+})
+
+Tab:AddButton({
+	Name = "脚本交流群786515108",
+	Callback = function()	        
+  	end    
+})
+
+
+
+OrionLib:Init()
