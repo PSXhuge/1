@@ -106,6 +106,24 @@ Tab:AddButton({
 })
 
 local Tab = Window:MakeTab({
+	Name = "Blox fruits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "功能我懒得一个一个翻译，自己翻译"
+})
+
+
+Tab:AddButton({
+	Name = "Bloxfruit（吊打白脚本）",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/bf"))()
+  	end
+})
+
+local Tab = Window:MakeTab({
 	Name = "公告（必看）",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
