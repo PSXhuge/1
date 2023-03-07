@@ -47,7 +47,37 @@ Tab:AddButton({
   	end    
 })
 
+local Section = Tab:AddSection({
+	Name = "传送岛屿"
+})
 
+Tab:AddButton({
+	Name = "返还出生岛",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9682.98828125, 58.87917709350586, 3099.033935546875)      
+  	end    
+})
+
+Tab:AddButton({
+	Name = "白雪城",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9676.138671875, 58.87917709350586, 3782.69384765625)   
+  	end    
+})
+
+Tab:AddButton({
+	Name = "熔岩城",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11054.96875, 216.83917236328125, 4898.62841796875)       
+  	end    
+})
+
+Tab:AddButton({
+	Name = "传奇公路",
+	Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13098.87109375, 216.83917236328125, 5907.6279296875)    
+  	end    
+})
 
 local Tab = Window:MakeTab({
 	Name = "造船寻宝",
@@ -127,13 +157,6 @@ local Tab = Window:MakeTab({
 	Name = "监狱人生",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
-})
-
-Tab:AddButton({
-	Name = "人物透视（杀手谜团2可以用）",
-	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/esp"))()
-  	end
 })
 
 Tab:AddButton({
