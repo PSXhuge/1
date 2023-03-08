@@ -1,7 +1,7 @@
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/19"))()
 local Whitelisted = false;
 
-if game.Players.LocalPlayer.Name == "这里添加用户名" then Whitelisted = true end
+if game.Players.LocalPlayer.Name == "tangmenjiang" then Whitelisted = true end
 if Whitelisted == true then
 local Window = OrionLib:MakeWindow({Name = "多游戏功能（作者龙叔）", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
