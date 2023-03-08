@@ -18,7 +18,6 @@ local Section = Tab:AddSection({
 
 
 
-
 Tab:AddButton({
 	Name = "开启卡宠",
 	Callback = function()
@@ -167,25 +166,69 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "变死神（有惊喜）",
+	Name = "变死神（有惊喜仅自己可见）",
 	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/sb"))()    
   	end
 })
 
 Tab:AddButton({
-	Name = "变钢铁侠（有惊喜）",
+	Name = "变钢铁侠（有惊喜别人能看见）",
 	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/sb2"))()
   	end
 })
 
 Tab:AddButton({
-	Name = "无头",
+	Name = "手里剑（秒杀）",
 	Callback = function()
-local A_1 = "{Removing Head, Hold Tight...}" local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
-local lp = game:GetService "Players".LocalPlayer if lp.Character:FindFirstChild "Head" then local char = lp.Character char.Archivable = true local new = char:Clone() new.Parent = workspace lp.Character = new wait(2) local oldhum = char:FindFirstChildWhichIsA "Humanoid" local newhum = oldhum:Clone() newhum.Parent = char newhum.RequiresNeck = false oldhum.Parent = nil wait(2) lp.Character = char new:Destroy() wait(1) newhum:GetPropertyChangedSignal("Health"):Connect( function() if newhum.Health <= 0 then oldhum.Parent = lp.Character wait(1) oldhum:Destroy() end end) workspace.CurrentCamera.CameraSubject = char if char:FindFirstChild "Animate" then char.Animate.Disabled = true wait(.1) char.Animate.Disabled = false end lp.Character:FindFirstChild "Head":Destroy() end
-local A_1 = "{Head Removed Successfully. Reset to Return to Normal.}" local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/jian"))()
+  	end
+})
+
+Tab:AddButton({
+	Name = "杀死全部（新版重复杀）",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/shasi"))()
+  	end
+})
+
+Tab:AddButton({
+	Name = "无敌模式（别人可见）",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/wudi"))()
+  	end
+})
+
+local Section = Tab:AddSection({
+	Name = "传送位置"
+})
+
+Tab:AddButton({
+	Name = "警卫室",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(847.7261352539062, 98.95999908447266, 2267.387451171875)
+  	end
+})
+
+Tab:AddButton({
+	Name = "监狱室内",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.2575073242188, 98.95999908447266, 2379.74169921875)
+  	end
+})
+
+Tab:AddButton({
+	Name = "罪犯复活仓库",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-937.5891723632812, 93.09876251220703, 2063.031982421875)
+  	end
+})
+
+Tab:AddButton({
+	Name = "监狱室外",
+	Callback = function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(760.6033325195312, 96.96992492675781, 2475.405029296875)
   	end
 })
 
