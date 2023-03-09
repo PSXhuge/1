@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/19"))()
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/cai"))()
 local Window = OrionLib:MakeWindow({Name = "多游戏功能（作者龙叔）", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
