@@ -1,3 +1,46 @@
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.CoreGui
+local Frame = Instance.new("Frame")
+Frame.Position = UDim2.new(0.5, -150, 0.5, -100)
+Frame.Size = UDim2.new(0, 300, 0, 200)
+Frame.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame.BorderSizePixel = 0
+Frame.Parent = ScreenGui
+local Title = Instance.new("TextLabel")
+Title.Position = UDim2.new(0, 0, 0, 10)
+Title.Size = UDim2.new(1, 0, 0, 30)
+Title.BackgroundColor3 = Color3.new(1, 1, 1)
+Title.BorderSizePixel = 0
+Title.Font = Enum.Font.SourceSansBold
+Title.Text = "q群786515108，卡密在公告里"
+Title.TextColor3 = Color3.new(0, 0, 0)
+Title.TextSize = 24
+Title.Parent = Frame
+local PasswordBox = Instance.new("TextBox")
+PasswordBox.Position = UDim2.new(0.5, -100, 0.5, -20)
+PasswordBox.Size = UDim2.new(0, 200, 0, 40)
+PasswordBox.BackgroundColor3 = Color3.new(0.8, 0.8, 0.8)
+PasswordBox.BorderSizePixel = 0
+PasswordBox.Font = Enum.Font.SourceSansBold
+PasswordBox.PlaceholderText = "请在这里输入卡密"
+PasswordBox.TextColor3 = Color3.new(0, 0, 0)
+PasswordBox.TextSize = 18
+PasswordBox.Parent = Frame
+local SubmitButton = Instance.new("TextButton")
+SubmitButton.Position = UDim2.new(0.5, -50, 0.5, 30)
+SubmitButton.Size = UDim2.new(0, 100, 0, 40)
+SubmitButton.BackgroundColor3 = Color3.new(0.1, 0.7, 0.1)
+SubmitButton.BorderSizePixel = 0
+SubmitButton.Font = Enum.Font.SourceSansBold
+SubmitButton.Text = "使用卡密"
+SubmitButton.TextColor3 = Color3.new(1, 1, 1)
+SubmitButton.TextSize = 18
+SubmitButton.Parent = Frame
+SubmitButton.MouseButton1Click:Connect(function()
+local password = PasswordBox.Text
+if password == "龙叔114514" then
+print("Password is correct!")
+Frame.Visible = false -- 隐藏密匙界面
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/cai"))()
 local Window = OrionLib:MakeWindow({Name = "多游戏功能（作者龙叔）", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
@@ -325,3 +368,7 @@ Tab:AddButton({
 
 
 OrionLib:Init()
+print("Password is incorrect!")
+-- Do something here if the password is incorrect
+end
+end)
