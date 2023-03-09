@@ -456,7 +456,7 @@ function OrionLib:Init()
 				LoadCfg(readfile(OrionLib.Folder .. "/" .. game.GameId .. ".txt"))
 				OrionLib:MakeNotification({
 					Name = "欢迎使用龙叔脚本",
-					Content = "当前游戏ID为:" .. game.GameId .. ".",
+					Content = "当前游戏ID为:" .. game.Name .. "",
 					Time = 5
 				})
 			end
