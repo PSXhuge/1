@@ -200,6 +200,33 @@ Tab:AddButton({
   	end
 })
 
+Tab:AddToggle({
+	Name = "穿墙",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+		    Noclip = true
+		    Stepped = game.RunService.Stepped:Connect(function()
+			    if Noclip == true then
+				    for a, b in pairs(game.Workspace:GetChildren()) do
+                        if b.Name == game.Players.LocalPlayer.Name then
+                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
+                                if v:IsA("BasePart") then
+                                    v.CanCollide = false
+                                end
+                            end
+                        end
+                    end
+			    else
+				    Stepped:Disconnect()
+			    end
+		    end)
+	    else
+		    Noclip = false
+	    end
+	end
+})
+
 local Section = Tab:AddSection({
 	Name = "传送位置"
 })
@@ -219,17 +246,62 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "罪犯复活仓库",
+	Name = "监狱室外",
 	Callback = function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-937.5891723632812, 93.09876251220703, 2063.031982421875)
   	end
 })
 
 Tab:AddButton({
-	Name = "监狱室外",
+	Name = "罪犯复活仓库",
 	Callback = function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(760.6033325195312, 96.96992492675781, 2475.405029296875)
   	end
+})
+
+local Tab = Window:MakeTab({
+	Name = "通用功能",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "跳跃高度设置",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end
+})
+
+Tab:AddTextbox({
+	Name = "移动速度设置",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end
+})
+
+Tab:AddTextbox({
+	Name = "重力设置",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Workspace.Gravity = Value
+	end
+})
+
+Tab:AddToggle({
+	Name = "夜视",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+		    game.Lighting.Ambient = Color3.new(1, 1, 1)
+		else
+		    game.Lighting.Ambient = Color3.new(0, 0, 0)
+		end
+	end
 })
 
 local Tab = Window:MakeTab({
