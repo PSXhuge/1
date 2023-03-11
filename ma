@@ -1,4 +1,158 @@
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/19"))()
+local GUI = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Key = Instance.new("ImageLabel")
+local Text = Instance.new("TextLabel")
+local VerifyFrame = Instance.new("Frame")
+local KeyBox = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local VerifyButton = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
+local GetKey = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local GuiRemoval = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+
+
+
+GUI.Name = "GUI"
+GUI.Parent = game.CoreGui
+
+Main.Name = "Main"
+Main.Parent = GUI
+Main.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+Main.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Main.Position = UDim2.new(0.413353175, 0, 0.441176474, 0)
+Main.Size = UDim2.new(0.172441572, 0, 0.117647059, 0)
+
+UICorner.Parent = Main
+
+Key.Name = "Key"
+Key.Parent = Main
+Key.BackgroundTransparency = 1.000
+Key.Position = UDim2.new(0.435148925, 0, 0.115340024, 0)
+Key.Size = UDim2.new(0.128056228, 0, 0.338304013, 0)
+Key.ZIndex = 2
+Key.Image = "rbxassetid://3926307971"
+Key.ImageColor3 = Color3.fromRGB(255, 38, 38)
+Key.ImageRectOffset = Vector2.new(44, 324)
+Key.ImageRectSize = Vector2.new(36, 36)
+
+Text.Name = "Text"
+Text.Parent = Main
+Text.BackgroundColor3 = Color3.fromRGB(26, 26, 2)
+Text.BackgroundTransparency = 1.000
+Text.BorderColor3 = Color3.fromRGB(26, 26, 26)
+Text.Position = UDim2.new(0.0327102803, 0, 0.370000005, 0)
+Text.Size = UDim2.new(0.934579492, 0, 0.5, 0)
+Text.Font = Enum.Font.SourceSansSemibold
+Text.Text = "请输入"
+Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text.TextSize = 35.000
+Text.TextWrapped = true
+
+VerifyFrame.Name = "Verify Frame"
+VerifyFrame.Parent = GUI
+VerifyFrame.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+VerifyFrame.Position = UDim2.new(0.388749182, 0, 0.569411755, 0)
+VerifyFrame.Size = UDim2.new(0.222401291, 0, 0.15529412, 0)
+
+KeyBox.Name = "Key Box"
+KeyBox.Parent = VerifyFrame
+KeyBox.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+KeyBox.Position = UDim2.new(0.216714069, 0, 0.0933334902, 0)
+KeyBox.Size = UDim2.new(0.552679658, 0, 0.298396379, 0)
+KeyBox.Font = Enum.Font.SourceSansSemibold
+KeyBox.PlaceholderColor3 = Color3.fromRGB(80, 80, 80)
+KeyBox.PlaceholderText = "卡密呢小b崽子"
+KeyBox.Text = "这里输入卡密"
+KeyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeyBox.TextScaled = true
+KeyBox.TextSize = 14.000
+KeyBox.TextWrapped = true
+
+UICorner_2.Parent = KeyBox
+
+if identifyexecutor() == "Synapse X" then
+	request = syn.request
+elseif identifyexecutor() == "Krnl" then
+	request = http_request
+else
+	request = request
+end
+
+local suskey = request({Url = "https://pastebin.com/raw/6DZ7Nb1t",Method = "GET"}).Body
+
+VerifyButton.Name = "Verify Button"
+VerifyButton.Parent = VerifyFrame
+VerifyButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+VerifyButton.Position = UDim2.new(0.13767235, 0, 0.491583407, 0)
+VerifyButton.Size = UDim2.new(0.724637687, 0, 0.378787875, 0)
+VerifyButton.Font = Enum.Font.SourceSansSemibold
+VerifyButton.Text = "使用卡密"
+VerifyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+VerifyButton.TextSize = 34.000
+VerifyButton.MouseButton1Down:connect(function()
+	if KeyBox.Text == suskey then
+		local TweenService = game:GetService("TweenService")
+		local key = game.CoreGui.GUI.Main.Key 
+		local info = TweenInfo.new(0.6, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false)
+
+		local tween = TweenService:Create(key, info, {ImageColor3 = Color3.fromRGB(106, 255, 106)})
+
+		tween:Play()
+		
+		game.StarterGui:SetCore("SendNotification", {Title = "卡密正确", Text = "欢迎使用", Icon = "rbxassetid://12206884774", Duration = 4})
+
+		wait(7)
+
+		GUI.Parent = nil
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.CoreGui
+local Frame = Instance.new("Frame")
+Frame.Position = UDim2.new(0.5, -150, 0.5, -100)
+Frame.Size = UDim2.new(0, 300, 0, 200)
+Frame.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame.BorderSizePixel = 0
+Frame.Parent = ScreenGui
+local Title = Instance.new("TextLabel")
+Title.Position = UDim2.new(0, 0, 0, 10)
+Title.Size = UDim2.new(1, 0, 0, 30)
+Title.BackgroundColor3 = Color3.new(1, 1, 1)
+Title.BorderSizePixel = 0
+Title.Font = Enum.Font.SourceSansBold
+Title.Text = "q群786515108，卡密在公告里"
+Title.TextColor3 = Color3.new(0, 0, 0)
+Title.TextSize = 24
+Title.Parent = Frame
+local PasswordBox = Instance.new("TextBox")
+PasswordBox.Position = UDim2.new(0.5, -100, 0.5, -20)
+PasswordBox.Size = UDim2.new(0, 200, 0, 40)
+PasswordBox.BackgroundColor3 = Color3.new(0.8, 0.8, 0.8)
+PasswordBox.BorderSizePixel = 0
+PasswordBox.Font = Enum.Font.SourceSansBold
+PasswordBox.PlaceholderText = "请在这里输入卡密"
+PasswordBox.TextColor3 = Color3.new(0, 0, 0)
+PasswordBox.TextSize = 18
+PasswordBox.Parent = Frame
+local SubmitButton = Instance.new("TextButton")
+SubmitButton.Position = UDim2.new(0.5, -50, 0.5, 30)
+SubmitButton.Size = UDim2.new(0, 100, 0, 40)
+SubmitButton.BackgroundColor3 = Color3.new(0.1, 0.7, 0.1)
+SubmitButton.BorderSizePixel = 0
+SubmitButton.Font = Enum.Font.SourceSansBold
+SubmitButton.Text = "使用卡密"
+SubmitButton.TextColor3 = Color3.new(1, 1, 1)
+SubmitButton.TextSize = 18
+SubmitButton.Parent = Frame
+SubmitButton.MouseButton1Click:Connect(function()
+local password = PasswordBox.Text
+if password == "龙叔114514" then
+print("Password is correct!")
+Frame.Visible = false -- 隐藏密匙界面
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/cai"))()
 local Window = OrionLib:MakeWindow({Name = "多游戏功能（作者龙叔）", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
@@ -246,14 +400,14 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "监狱室外",
+	Name = "罪犯复活点",
 	Callback = function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-937.5891723632812, 93.09876251220703, 2063.031982421875)
   	end
 })
 
 Tab:AddButton({
-	Name = "罪犯复活仓库",
+	Name = "监狱室外",
 	Callback = function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(760.6033325195312, 96.96992492675781, 2475.405029296875)
   	end
@@ -305,10 +459,10 @@ Tab:AddToggle({
 })
 
 Tab:AddToggle({
-	Name = "夜视",
+	Name = "透视",
 	Default = false,
 	Callback = function(Value)
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/toushi"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/toushi"))()			    
 	end
 })
 
@@ -333,3 +487,30 @@ Tab:AddButton({
 
 
 OrionLib:Init()
+print("Password is incorrect!")
+-- Do something here if the password is incorrect
+end
+end)
+
+
+	end
+end)
+
+UICorner_3.Parent = VerifyButton
+
+UICorner_4.Parent = VerifyFrame
+
+GetKey.Name = "请输入"
+GetKey.Parent = VerifyFrame
+GetKey.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+GetKey.Position = UDim2.new(0.235357329, 0, -1.38818645, 0)
+GetKey.Size = UDim2.new(0.505842388, 0, 0.447802067, 0)
+GetKey.Font = Enum.Font.SourceSansSemibold
+GetKey.Text = "获得"
+GetKey.TextColor3 = Color3.fromRGB(255, 255, 255)
+GetKey.TextSize = 42.000
+GetKey.TextWrapped = true
+GetKey.MouseButton1Down:connect(function()
+	setclipboard("请进786515108群获得卡密")
+	game.StarterGui:SetCore("SendNotification", {Title = "已复制卡密链接", Text = "快点获得卡密", Icon = "", Duration = 5})
+end)
