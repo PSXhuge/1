@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet('https://pastebin.com/raw/vPWzQEC8'))()
+local library = loadstring(game:HttpGet('https://pastebin.com/raw/XhAa6QEf'))()
 local plr = game.Players.LocalPlayer
 local char = plr.Character or plr.CharacterAdded:Wait()
 local hum = char:FindFirstChildOfClass("Humanoid") or char:WaitForChild("Humanoid")
@@ -150,9 +150,9 @@ local flags = {
 local DELFLAGS = {table.unpack(flags)}
 local esptable = {doors={},keys={},items={},books={},entity={},chests={},lockers={},people={},gold={}}
 
-local window_player = library.window("功能")
-local window_esp = library.window("显示透视")
-local window_misc = library.window("其他功能")
+local window_player = library.window("player")
+local window_esp = library.window("esp")
+local window_misc = library.window("misc")
 
 window_player.toggle("client glow",false,function(val)
     flags.light = val
@@ -180,7 +180,7 @@ window_player.toggle("instant use",false,function(val)
     holdconnect:Disconnect()
 end)
 
-local walkspeedslider = window_player.slider("速度设置",16,25,1,16,function(val)
+local walkspeedslider = window_player.slider("walkspeed",16,25,1,16,function(val)
     hum.WalkSpeed = val
     flags.speed = val
 end)
@@ -195,7 +195,7 @@ task.spawn(function()
     end
 end)
 
-window_esp.toggle("显示门位置",false,function(val)
+window_esp.toggle("door esp",false,function(val)
     flags.espdoors = val
     
     if val then
@@ -235,7 +235,7 @@ window_esp.toggle("显示门位置",false,function(val)
     end
 end)
 
-window_esp.toggle("钥匙/经验位置显示",false,function(val)
+window_esp.toggle("key/lever esp",false,function(val)
     flags.espkeys = val
     
     if val then
@@ -293,7 +293,7 @@ window_esp.toggle("钥匙/经验位置显示",false,function(val)
     end
 end)
 
-window_esp.toggle("项目位置显示",false,function(val)
+window_esp.toggle("item esp",false,function(val)
     flags.espitems = val
     
     if val then
@@ -347,7 +347,7 @@ window_esp.toggle("项目位置显示",false,function(val)
     end
 end)
 
-window_esp.toggle("书本/断路器位置显示",false,function(val)
+window_esp.toggle("book/breaker esp",false,function(val)
     flags.espbooks = val
     
     if val then
@@ -398,8 +398,8 @@ end)
 
 local entitynames = {"RushMoving","AmbushMoving","Snare","A60","A120"}
 
-window_player.label("作者是你的龙叔爸爸，好好的别倒卖",20)
-window_esp.toggle("实体显示",false,function(val)
+window_player.label("credits: zoophiliaphobic#6287\noh my dayyzz",20)
+window_esp.toggle("entity esp",false,function(val)
     flags.esprush = val
     
     if val then
@@ -465,7 +465,7 @@ window_esp.toggle("实体显示",false,function(val)
     end
 end)
 
-window_esp.toggle("柜子位置显示",false,function(val)
+window_esp.toggle("locker esp",false,function(val)
     flags.esplocker = val
     
     if val then
@@ -520,7 +520,7 @@ window_esp.toggle("柜子位置显示",false,function(val)
     end
 end)
 
-window_esp.toggle("宝箱位置显示",false,function(val)
+window_esp.toggle("chest esp",false,function(val)
     flags.espchest = val
     
     if val then
@@ -574,7 +574,7 @@ window_esp.toggle("宝箱位置显示",false,function(val)
     end
 end)
 
-window_esp.toggle("玩家位置显示",false,function(val)
+window_esp.toggle("player esp",false,function(val)
     flags.esphumans = val
     
     if val then
@@ -621,7 +621,7 @@ window_esp.toggle("玩家位置显示",false,function(val)
     end
 end)
 
-window_esp.toggle("金币位置显示",false,function(val)
+window_esp.toggle("goldpile esp",false,function(val)
     flags.espgold = val
     
     if val then
@@ -676,11 +676,11 @@ window_esp.toggle("金币位置显示",false,function(val)
     end
 end)
 
-window_esp.slider("黄金价值设置",5,150,5,25,function(val)
+window_esp.slider("minimum gold value",5,150,5,25,function(val)
     flags.goldespvalue = val
 end)
 
-window_misc.toggle("实体预警",false,function(val)
+window_misc.toggle("notify entities",false,function(val)
     flags.hintrush = val
     
     if val then
@@ -700,7 +700,7 @@ window_misc.toggle("实体预警",false,function(val)
     end
 end)
 
-window_misc.toggle("禁用道路追踪",false,function(val)
+window_misc.toggle("disable seek chase",false,function(val)
     flags.noseek = val
     
     if val then
@@ -718,7 +718,7 @@ window_misc.toggle("禁用道路追踪",false,function(val)
     end
 end)
 
-window_misc.toggle("删除门",false,function(val)
+window_misc.toggle("delete gates",false,function(val)
     flags.nogates = val
     
     if val then
@@ -740,7 +740,7 @@ window_misc.toggle("删除门",false,function(val)
     end
 end)
 
-window_misc.toggle("删除拼图门",false,function(val)
+window_misc.toggle("delete puzzle door",false,function(val)
     flags.nopuzzle = val
     
     if val then
@@ -766,7 +766,7 @@ end)
 local screechremote = entityinfo:FindFirstChild("Screech")
 
 if screechremote then
-    window_misc.toggle("无伤害尖叫",false,function(val)
+    window_misc.toggle("harmless screech",false,function(val)
         flags.noscreech = val
         
         if val then
@@ -777,7 +777,7 @@ if screechremote then
     end)
 end
 
-window_misc.toggle("没有骨架门",false,function(val)
+window_misc.toggle("no skeleton doors",false,function(val)
     flags.noskeledoors = val
     
     if val then
@@ -795,7 +795,7 @@ window_misc.toggle("没有骨架门",false,function(val)
     end
 end)
 
-window_misc.toggle("自动库代码",false,function(val)
+window_misc.toggle("auto library code",false,function(val)
     flags.getcode = val
     
     if val then
@@ -842,7 +842,7 @@ window_misc.toggle("自动库代码",false,function(val)
     end
 end)
 
-window_misc.toggle("A-000 门没有锁",false,function(val)
+window_misc.toggle("A-000 door no locks",false,function(val)
     flags.roomsnolock = val
     
     if val then
@@ -869,7 +869,7 @@ window_misc.toggle("A-000 门没有锁",false,function(val)
     end
 end)
 
-window_misc.toggle("抢劫光环",false,function(val)
+window_misc.toggle("loot aura",false,function(val)
     flags.draweraura = val
     
     if val then
@@ -967,9 +967,9 @@ window_misc.toggle("抢劫光环",false,function(val)
     end
 end)
 
-window_misc.label("反外挂开启过后，同队外挂玩家将被限制游戏",32)
+window_misc.label("bypass anticheat makes it so you CANT pick up ANYTHING so only do this in multiplayer or in the rooms area",32)
 
-window_misc.button("反外挂防搞乱狗东西",function()
+window_misc.button("bypass anticheat",function()
     local newhum = hum:Clone()
     newhum.Name = "humlol"
     newhum.Parent = char
@@ -1053,7 +1053,7 @@ if game.ReplicatedStorage:WaitForChild("GameData"):WaitForChild("Floor").Value =
     end)
 end
 
-window_misc.button("关闭悬浮窗",function()
+window_misc.button("close gui",function()
     flags = DELFLAGS
     
     task.wait()
