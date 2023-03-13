@@ -203,7 +203,7 @@ window_esp.toggle("door esp",false,function(val)
             local door = room:WaitForChild("Door"):WaitForChild("Door")
             
             task.wait(0.1)
-            local h = esp(door,Color3.fromRGB(255,240,0),door,"Door")
+            local h = esp(door,Color3.fromRGB(255,240,0),door,"门")
             table.insert(esptable.doors,h)
             
             door:WaitForChild("Open").Played:Connect(function()
@@ -247,7 +247,7 @@ window_esp.toggle("key/lever esp",false,function(val)
                     local parts = hitbox:GetChildren()
                     table.remove(parts,table.find(parts,hitbox:WaitForChild("PromptHitbox")))
                     
-                    local h = esp(parts,Color3.fromRGB(90,255,40),hitbox,"Key")
+                    local h = esp(parts,Color3.fromRGB(90,255,40),hitbox,"钥匙")
                     table.insert(esptable.keys,h)
                     
                 elseif v.Name == "LeverForGate" then
@@ -355,7 +355,7 @@ window_esp.toggle("book/breaker esp",false,function(val)
             if v:IsA("Model") and (v.Name == "LiveHintBook" or v.Name == "LiveBreakerPolePickup") then
                 task.wait(0.1)
                 
-                local h = esp(v,Color3.fromRGB(160,190,255),v.PrimaryPart,"Book")
+                local h = esp(v,Color3.fromRGB(160,190,255),v.PrimaryPart,"书")
                 table.insert(esptable.books,h)
                 
                 v.AncestryChanged:Connect(function()
@@ -431,7 +431,7 @@ window_esp.toggle("entity esp",false,function(val)
                     if v:IsA("Model") and table.find(entitynames,v.Name) then
                         task.wait(0.1)
                         
-                        local h = esp(v:WaitForChild("Base"),Color3.fromRGB(255,25,25),v.Base,"Snare")
+                        local h = esp(v:WaitForChild("Base"),Color3.fromRGB(255,25,25),v.Base,"陷阱")
                         table.insert(esptable.entity,h)
                     end
                 end
@@ -473,10 +473,10 @@ window_esp.toggle("locker esp",false,function(val)
             if v:IsA("Model") then
                 task.wait(0.1)
                 if v.Name == "Wardrobe" then
-                    local h = esp(v.PrimaryPart,Color3.fromRGB(145,100,25),v.PrimaryPart,"Closet")
+                    local h = esp(v.PrimaryPart,Color3.fromRGB(145,100,25),v.PrimaryPart,"柜子")
                     table.insert(esptable.lockers,h) 
                 elseif (v.Name == "Rooms_Locker" or v.Name == "Rooms_Locker_Fridge") then
-                    local h = esp(v.PrimaryPart,Color3.fromRGB(145,100,25),v.PrimaryPart,"Locker")
+                    local h = esp(v.PrimaryPart,Color3.fromRGB(145,100,25),v.PrimaryPart,"储物柜")
                     table.insert(esptable.lockers,h) 
                 end
             end
@@ -529,10 +529,10 @@ window_esp.toggle("chest esp",false,function(val)
                 task.wait(0.1)
                 if v.Name == "ChestBox" then
                     warn(v.Name)
-                    local h = esp(v,Color3.fromRGB(205,120,255),v.PrimaryPart,"Chest")
+                    local h = esp(v,Color3.fromRGB(205,120,255),v.PrimaryPart,"宝箱")
                     table.insert(esptable.chests,h) 
                 elseif v.Name == "ChestBoxLocked" then
-                    local h = esp(v,Color3.fromRGB(255,120,205),v.PrimaryPart,"Locked Chest")
+                    local h = esp(v,Color3.fromRGB(255,120,205),v.PrimaryPart,"钥匙宝箱")
                     table.insert(esptable.chests,h) 
                 end
             end
@@ -632,7 +632,7 @@ window_esp.toggle("goldpile esp",false,function(val)
                 
                 if goldvalue and goldvalue >= flags.goldespvalue then
                     local hitbox = v:WaitForChild("Hitbox")
-                    local h = esp(hitbox:GetChildren(),Color3.fromRGB(255,255,0),hitbox,"GoldPile [".. tostring(goldvalue).."]")
+                    local h = esp(hitbox:GetChildren(),Color3.fromRGB(255,255,0),hitbox,"金币 [".. tostring(goldvalue).."]")
                     table.insert(esptable.gold,h)
                 end
             end
