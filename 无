@@ -1,0 +1,19 @@
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/19"))()
+local Window = OrionLib:MakeWindow({Name = "多游戏功能（作者龙叔）", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+
+
+local Tab = Window:MakeTab({
+	Name = "公告",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "脚本已换链接，请进786515108群获得最新链接",
+	Callback = function()  
+  	end
+})
+
+OrionLib:Init()

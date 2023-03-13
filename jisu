@@ -1,0 +1,149 @@
+repeat wait() until game:IsLoaded()
+
+function spawn(callback)
+    task.spawn(callback)
+end
+
+-- // Services \\ --
+local Players = game:GetService("Players")
+local Client = Players.LocalPlayer
+
+local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/L1ZOT/Team-Skeet/main/lib/Source.lua"))()
+
+local win = SolarisLib:New({
+   Name = "极速传奇[作者龙叔]",
+   FolderToSave = "记得三连"
+})
+
+local tab = win:Tab("自动刷菜单")
+
+local sec = tab:Section("自动刷")
+local Racing = tab:Section("比赛")
+
+local tab2 = win:Tab("加群点这")
+
+local secc = tab2:Section("你三连了没，那就加群")
+
+secc:Button("脚本交流群786515108【点我直接复制群号】", function()
+    setclipboard("786515108")
+end)
+
+secc:Button("加群兄弟们", function()
+    local req = (syn and syn.request) or (http and http.request) or http_request or nil
+    if req ~= nil then
+        for port = 6463, 6472, 1 do
+            local inv = 'http://127.0.0.1:' .. tostring(port) .. '/rpc?v=1'
+            local http = game:GetService('HttpService')
+            local t = {
+                cmd = 'INVITE_BROWSER',
+                args = {
+                    ['code'] = 'PKx8qevgMk'
+                },
+                nonce = string.lower(http:GenerateGUID(false))
+            }
+            local post = http:JSONEncode(t)
+            req({
+                Url = inv,
+                Method = 'POST',
+                Body = post,
+                Headers = {
+                    ['Content-Type'] = 'application/json',
+                    ['Origin'] = 'https://discord.com'
+                }
+            })
+        end
+    end
+end)
+
+sec:Toggle("自动刷经验", false,"Toggle", function(t)
+    StartFarm = t
+end)
+
+spawn(function()
+    while task.wait() do
+        if StartFarm then
+            pcall(function()
+                for i,v in pairs(game:GetService("ReplicatedStorage").Orbs:GetChildren()) do
+                    if v:IsA("Model") then
+                        for i = 1,FarmSpeed do
+                            game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", v.Name, "City")
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+
+sec:Toggle("自动重生", false,"Toggle", function(t)
+    Auto_Rebirth = t
+end)
+
+spawn(function()
+    while task.wait() do
+        if Auto_Rebirth then
+            pcall(function()
+                game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer("rebirthRequest")
+            end)
+        end
+    end
+end)
+
+local slider = sec:Slider("自调速度值", 1,10,1,1,"Slider", function(t)
+   FarmSpeed = t
+end)
+
+sec:Toggle("吸全部光环", false,"Toggle", function(t)
+    Bring_Hops = t
+end)
+
+spawn(function()
+    while task.wait() do
+        if Bring_Hops then
+            pcall(function()
+                for i,v in pairs(game:GetService("Workspace").Hoops:GetChildren()) do
+                    v.CFrame = Client.Character.HumanoidRootPart.CFrame
+                end
+            end)
+        end
+    end
+end)
+
+function EToggle(Parent, Name, callback)
+    Parent:Toggle(Name, false,"Toggle", callback)
+end
+
+EToggle(Racing, "自动加入比赛", function(t)
+    Auto_Join_Race = t
+end)
+
+spawn(function()
+    while task.wait() do
+        if Auto_Join_Race then
+            pcall(function()
+                if Client.PlayerGui.gameGui.raceJoinLabel.Visible then
+                    game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer("joinRace")
+                end
+            end)
+        end
+    end
+end)
+
+EToggle(Racing, "自动完成比赛", function(t)
+    Auto_Race = t
+end)
+
+spawn(function()
+    while task.wait() do
+        if Auto_Race then
+            pcall(function()
+                for i,v in pairs(game:GetService("Workspace").raceMaps:GetChildren()) do
+                    if game.Players.LocalPlayer.currentMap.Value == v.mapValue.Value then
+                        repeat task.wait() until Client.PlayerGui.gameGui.countdownLabels.goLabel.Visible
+                        Client.Character.HumanoidRootPart.CFrame = v.finishPart.CFrame
+                    end
+                end
+            end)
+        end
+    end
+end)
