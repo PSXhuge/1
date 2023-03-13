@@ -13,7 +13,7 @@ local Tab = Window:MakeTab({
 
 
 local Section = Tab:AddSection({
-	Name = "付费功能"
+	Name = "功能"
 })
 
 
@@ -21,7 +21,7 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "开启卡宠",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87"))()		
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/jisu22"))()		
   	end
 })
 
@@ -29,7 +29,7 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "自动重生和自动刷等级",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87%E5%8A%9F%E8%83%BD"))()        
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/jisu11"))()        
   	end    
 })
 
@@ -87,7 +87,7 @@ local Tab = Window:MakeTab({
 
 
 local Section = Tab:AddSection({
-	Name = "付费功能"
+	Name = "功能"
 })
 
 
@@ -96,7 +96,7 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "自动刷金条",
 	Callback = function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/Lyy77rnr",true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/chuan11"))()
   	end
 })
 
@@ -117,7 +117,7 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "飞行装备（可控制物体）",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/main/feixing"))()		
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/main/fei"))()		
   	end
 })
 
@@ -148,7 +148,7 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "Bloxfruit（吊打白脚本）",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/bf"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/bf11"))()
   	end
 })
 
@@ -161,42 +161,42 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "变车模型",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/bianche"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/bianche11"))()
   	end
 })
 
 Tab:AddButton({
 	Name = "变死神（有惊喜仅自己可见）",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/sb"))()    
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/sb11"))()    
   	end
 })
 
 Tab:AddButton({
 	Name = "变钢铁侠（有惊喜别人能看见）",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/sb2"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/sb22"))()
   	end
 })
 
 Tab:AddButton({
 	Name = "手里剑（秒杀）",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/jian"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/jian11"))()
   	end
 })
 
 Tab:AddButton({
 	Name = "杀死全部（新版重复杀）",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/shasi"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/shasi11"))()
   	end
 })
 
 Tab:AddButton({
 	Name = "无敌模式（别人可见）",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/wudi"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/wudi11"))()
   	end
 })
 
@@ -256,6 +256,36 @@ Tab:AddButton({
 	Name = "监狱室外",
 	Callback = function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(760.6033325195312, 96.96992492675781, 2475.405029296875)
+  	end
+})
+
+local Tab = Window:MakeTab({
+	Name = "法宝模拟器",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "功能"
+})
+
+Tab:AddButton({
+	Name = "法宝自动刷（任何地方）",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/fabao11"))()
+  	end
+})
+
+local Tab = Window:MakeTab({
+	Name = "忍者传奇",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "点这出菜单，自己翻译cnm没时间",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/offxnder/NOXIOUS-Ninja-Legends/main/script.lua"))()
   	end
 })
 
