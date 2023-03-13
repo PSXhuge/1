@@ -5,6 +5,24 @@ local Window = OrionLib:MakeWindow({Name = "多游戏功能（作者龙叔）", 
 
 
 local Tab = Window:MakeTab({
+	Name = "龙叔有话说",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "倒卖全家死光光",
+	Callback = function()	
+  	end
+})
+
+Tab:AddButton({
+	Name = "你妈死了，别jb群里问问问",
+	Callback = function()	
+  	end
+})
+
+local Tab = Window:MakeTab({
 	Name = "极速传奇",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
