@@ -331,6 +331,18 @@ Tab:AddButton({
   	end
 })
 
+Tab:AddButton({
+	Name = "夜视仪（出电梯开）",
+	Callback = function()
+	_G.UpdateStars = false -- stars disappear after picking up a book/breaker pole | false: a little lag
+_G.OnShop = true -- can buy on pre run shop
+_G.Price = 10 -- tablet price on shop
+_G.Description = "" -- tablet description on shop
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/PSXhuge/1/114514/shexiangji'))()
+  	end
+})
+
 local Tab = Window:MakeTab({
 	Name = "通用功能",
 	Icon = "rbxassetid://4483345998",
