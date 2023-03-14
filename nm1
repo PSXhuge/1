@@ -343,6 +343,13 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/PSXhuge/1/114514/shex
   	end
 })
 
+Tab:AddButton({
+	Name = "十字架（出电梯开）",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/shizijia11"))()
+  	end
+})
+
 local Tab = Window:MakeTab({
 	Name = "通用功能",
 	Icon = "rbxassetid://4483345998",
