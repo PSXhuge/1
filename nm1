@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/he"))()
-local Window = OrionLib:MakeWindow({Name = "多游戏功能（作者龙叔）", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "龙脚本", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
 
@@ -304,6 +304,30 @@ Tab:AddButton({
 	Name = "点这出菜单，自己翻译cnm没时间",
 	Callback = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/offxnder/NOXIOUS-Ninja-Legends/main/script.lua"))()
+  	end
+})
+
+local Tab = Window:MakeTab({
+	Name = "doors",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "功能"
+})
+
+Tab:AddButton({
+	Name = "门绘图显示",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/doorstou"))()
+  	end
+})
+
+Tab:AddButton({
+	Name = "人物透视",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/PSXhuge/1/114514/toushi"))()
   	end
 })
 
